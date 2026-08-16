@@ -3,22 +3,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Random aleatorio = new Random();
-        Scanner leitura = new Scanner(System.in);
-        int valor = aleatorio.nextInt(100);
-        int chances = 1;
-        boolean acertou = false;
+        Scanner leitor = new Scanner(System.in);
+        int numeroGerado = new Random().nextInt(100); // gera um número aleatório entre 0 e 100
+        int tentativas = 0;
+        int numeroDigitado = 0;
 
-        System.out.println("Tente acertar o número aleatório ente 0 a 100:");
-        while (chances <= 5 && !acertou)
-        {
-            if(leitura.nextInt() == valor) acertou = true;
-            else System.out.println("Tente outro número!");
-            chances++;
+        while (tentativas < 5) {
+            System.out.print("Digite um número entre 0 e 100: ");
+            numeroDigitado = leitor.nextInt();
+            tentativas++;
+
+            if (numeroDigitado == numeroGerado) {
+                System.out.println("Parabéns, você acertou o número em " + tentativas + " tentativas!");
+                break; // interrompe o loop while
+            } else if (numeroDigitado < numeroGerado) {
+                System.out.println("O número digitado é menor que o número gerado.");
+            } else {
+                System.out.println("O número digitado é maior que o número gerado.");
+            }
         }
 
-        if (acertou) System.out.println("Você acertou o valor");
-        else System.out.println("Não foi dessa vez, tente na próxima!");
+        if (tentativas == 5 && numeroDigitado != numeroGerado) {
+            System.out.println("Você não conseguiu acertar o número em 05 tentativas. O número era: " + numeroGerado);
+        }
 
     }
 }
