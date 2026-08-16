@@ -35,5 +35,5 @@ O objetivo do jogo é adivinhar um número secreto gerado aleatoriamente dentro 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
-   cd SEU-REPOSITORIO
+   git clone https://github.com/petrucioFilho/AdvinhacaoJava.git
+   cd AdvinhacaoJava
